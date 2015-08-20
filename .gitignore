@@ -1,0 +1,17 @@
+# Nightwatch
+reports/
+node_modules/
+
+# IDEA IntelliJ
+.project
+.classpath
+.cache
+.settings
+
+# Sublime specific
+*.sublime
+*.sublime-project
+*.sublime-workspace
+
+.DS_Store
+

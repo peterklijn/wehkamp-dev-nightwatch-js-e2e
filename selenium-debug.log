@@ -1,0 +1,95 @@
+23:22:15.774 INFO - Launching a standalone Selenium Server
+23:22:15.801 INFO - Java: Oracle Corporation 25.25-b02
+23:22:15.801 INFO - OS: Mac OS X 10.10.4 x86_64
+23:22:15.809 INFO - v2.47.1, with Core v2.47.1. Built from revision 411b314
+23:22:15.859 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform MAC
+23:22:15.860 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform MAC
+23:22:15.860 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+23:22:15.860 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+23:22:15.925 INFO - RemoteWebDriver instances should connect to: http://127.94.0.1:4444/wd/hub
+23:22:15.925 INFO - Selenium Server is up and running
+23:22:16.121 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Hello World, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+23:22:16.129 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Hello World, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 2.12.301326 (093c7e07b4a916b690e784b0374c7f618f1ea4be) on port 45743
+Only local connections are allowed.
+23:22:17.684 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Hello World, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+23:22:17.701 INFO - Executing: [set window size])
+23:22:18.087 INFO - Done: [set window size]
+23:22:18.093 INFO - Executing: [get: https://www.wehkamp.com/nlbe/])
+23:22:19.778 INFO - Done: [get: https://www.wehkamp.com/nlbe/]
+23:22:19.782 INFO - Executing: [add cookie: NlUserModalShown=true; path=/; domain=.wehkamp.com])
+23:22:19.787 INFO - Done: [add cookie: NlUserModalShown=true; path=/; domain=.wehkamp.com]
+23:22:19.790 INFO - Executing: [add cookie: cookiebarCookie=accept; path=/; domain=.wehkamp.com])
+23:22:19.795 INFO - Done: [add cookie: cookiebarCookie=accept; path=/; domain=.wehkamp.com]
+23:22:19.799 INFO - Executing: [find elements: By.cssSelector: body])
+23:22:19.831 INFO - Done: [find elements: By.cssSelector: body]
+23:22:19.835 INFO - Executing: [is displayed: 0 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: body]])
+23:22:19.852 INFO - Done: [is displayed: 0 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: body]]
+23:22:19.856 INFO - Executing: [add cookie: rebb_shopper=null; path=/; domain=.wehkamp.com])
+23:22:19.856 WARN - Exception thrown
+java.lang.IllegalArgumentException: Required attributes are not set or any non-null attribute set to null
+	at org.openqa.selenium.Cookie.validate(Cookie.java:165)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.addCookie(RemoteWebDriver.java:676)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringOptions.addCookie(EventFiringWebDriver.java:508)
+	at org.openqa.selenium.remote.server.handler.AddCookie.call(AddCookie.java:43)
+	at org.openqa.selenium.remote.server.handler.AddCookie.call(AddCookie.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+23:22:19.858 WARN - Exception: Required attributes are not set or any non-null attribute set to null
+23:22:19.864 INFO - Executing: [get: https://www.wehkamp.com/nlbe/])
+23:22:20.310 INFO - Done: [get: https://www.wehkamp.com/nlbe/]
+23:22:22.318 INFO - Executing: [find elements: By.cssSelector: .search-bar])
+23:22:22.333 INFO - Done: [find elements: By.cssSelector: .search-bar]
+23:22:22.336 INFO - Executing: [is displayed: 1 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar]])
+23:22:22.345 INFO - Done: [is displayed: 1 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar]]
+23:22:22.349 INFO - Executing: [find element: By.cssSelector: .search-bar .input--text])
+23:22:22.359 INFO - Done: [find element: By.cssSelector: .search-bar .input--text]
+23:22:22.363 INFO - Executing: [send keys: 2 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .input--text], [h, e, l, l, o,  , w, o, r, l, d, !]])
+23:22:22.402 INFO - Done: [send keys: 2 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .input--text], [h, e, l, l, o,  , w, o, r, l, d, !]]
+23:22:22.405 INFO - Executing: [find element: By.cssSelector: .search-bar .btn--action])
+23:22:22.441 INFO - Done: [find element: By.cssSelector: .search-bar .btn--action]
+23:22:22.444 INFO - Executing: [click: 3 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .btn--action]])
+23:22:22.464 INFO - Done: [click: 3 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .btn--action]]
+23:22:23.473 INFO - Executing: [find element: By.cssSelector: h1])
+23:22:23.486 INFO - Done: [find element: By.cssSelector: h1]
+23:22:23.489 INFO - Executing: [get text: 4 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: h1]])
+23:22:23.503 INFO - Done: [get text: 4 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: h1]]
+23:22:23.509 INFO - Executing: [add cookie: rebb_shopper=null; path=/; domain=.wehkamp.com])
+23:22:23.510 WARN - Exception thrown
+java.lang.IllegalArgumentException: Required attributes are not set or any non-null attribute set to null
+	at org.openqa.selenium.Cookie.validate(Cookie.java:165)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.addCookie(RemoteWebDriver.java:676)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringOptions.addCookie(EventFiringWebDriver.java:508)
+	at org.openqa.selenium.remote.server.handler.AddCookie.call(AddCookie.java:43)
+	at org.openqa.selenium.remote.server.handler.AddCookie.call(AddCookie.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+23:22:23.510 WARN - Exception: Required attributes are not set or any non-null attribute set to null
+23:22:23.515 INFO - Executing: [get: https://www.wehkamp.com/nlbe/])
+23:22:23.833 INFO - Done: [get: https://www.wehkamp.com/nlbe/]
+23:22:25.842 INFO - Executing: [find elements: By.cssSelector: .search-bar])
+23:22:25.857 INFO - Done: [find elements: By.cssSelector: .search-bar]
+23:22:25.860 INFO - Executing: [is displayed: 5 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar]])
+23:22:25.878 INFO - Done: [is displayed: 5 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar]]
+23:22:25.881 INFO - Executing: [find element: By.cssSelector: .search-bar .input--text])
+23:22:25.891 INFO - Done: [find element: By.cssSelector: .search-bar .input--text]
+23:22:25.894 INFO - Executing: [send keys: 6 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .input--text], [h, e, l, l, o,  , w, o, r, l, d,  , 2, !]])
+23:22:25.928 INFO - Done: [send keys: 6 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .input--text], [h, e, l, l, o,  , w, o, r, l, d,  , 2, !]]
+23:22:25.932 INFO - Executing: [find element: By.cssSelector: .search-bar .btn--action])
+23:22:25.953 INFO - Done: [find element: By.cssSelector: .search-bar .btn--action]
+23:22:25.955 INFO - Executing: [click: 7 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .btn--action]])
+23:22:25.983 INFO - Done: [click: 7 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: .search-bar .btn--action]]
+23:22:26.991 INFO - Executing: [find element: By.cssSelector: h1])
+23:22:27.017 INFO - Done: [find element: By.cssSelector: h1]
+23:22:27.019 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: h1]])
+23:22:27.032 INFO - Done: [get text: 8 [[ChromeDriver: chrome on MAC (f863daa0016b6ac5884817589e1bc924)] -> css selector: h1]]
+23:22:27.036 INFO - Executing: [delete session: 12387274-6b81-4cac-87f2-f2df75d50c05])
+23:22:27.608 INFO - Done: [delete session: 12387274-6b81-4cac-87f2-f2df75d50c05]
