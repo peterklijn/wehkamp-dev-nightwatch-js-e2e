@@ -19,7 +19,7 @@ module.exports = {
       .waitForElementVisible("body", 1000)
   },
 
-  after : function(browser) {
+  after: function(browser) {
     browser.end()
     console.log("Closing down...");
   },
@@ -34,7 +34,12 @@ module.exports = {
         domain: '.developmentci.rebb.baseless.nl'})
       .url(this.client.launchUrl)
       .pause(2000)
-      .useCss()
+      .useCss();
+
+    this.client.page.search()
+      .searchFor('jumpsuit')
+      .submit();
+
   },
 
   'Search for a broek and expect the title of that product to contain broek' : function (client) {
@@ -50,10 +55,11 @@ module.exports = {
       .assert.containsText('@title', 'broek');
   },
 
-  // 'Hello world 2 test' : function (client) {
-  //   client.page.search()
-  //     .searchFor('hello world 2!')
-  //     .submit()
-  //     .assert.containsText('h1', 'Zoekresultaten');
-  // }
+  'Search page should contain the search marker in the URL for Divolte': function (client) {
+    client.page.search().assert.urlContains('manual');
+  },
+
+  'Search page should remember the search term': function (client) {
+    client.page.search().expect.element('@searchBar').to.have.attribute('value').equals('jumpsuit');
+  }
 };
