@@ -10,7 +10,6 @@ var searchCommands = {
 };
 
 module.exports = {
-  domain: '.developmentci.rebb.baseless.nl',
   commands: [searchCommands],
   elements: {
     searchBar: { selector: '.search-bar .input--text' },
