@@ -2,6 +2,7 @@
 reports/
 node_modules/
 *.log
+selenium-debug.log
 
 # IDEA IntelliJ
 .project
