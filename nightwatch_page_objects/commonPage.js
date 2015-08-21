@@ -8,6 +8,7 @@ module.exports = {
     products: '.tile',
     productPage: '.product-image',
     firstProduct: '.tile .tile__title',
-    shoppingBasketButtonElement: '.product-details__addtocart button.btn.btn--action'
+    shoppingBasketButtonElement: '.product-details__addtocart button.btn.btn--action',
+    firstBasketItemDescription: '.basket__title a'
   }
 }

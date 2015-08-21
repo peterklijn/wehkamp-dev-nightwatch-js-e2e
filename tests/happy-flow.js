@@ -37,7 +37,7 @@ before: function(browser) {
       .useCss()
   },
 
-  'Hello world test' : function (browser) {
+  'Happy flow test' : function (browser) {
     // Search for a trui from the homepage:
 
     var commonPage = browser.page.commonPage();
@@ -50,8 +50,8 @@ before: function(browser) {
       .expect.element('@title').text.to.equal('Zoekresultaten');
 
     commonPage
-      .getText('@firstProduct', function (name) {
-        productName = name;
+      .getText('@firstProduct', function (result) {
+        productName = (result.status === 0 && result.value);
       })
       .click('@firstProduct')
       .waitForElementPresent('@productPage', 10000)
@@ -62,9 +62,12 @@ before: function(browser) {
       .waitForElementPresent('@basketPage', 10000)
       .expect.element('@title').text.to.equal('Winkelmand');
 
-    // // Check if product is in basket:
-    // expect(basketPage.firstBasketItemDescription.getText()).toBe(productName);
-    //
+    browser
+      .perform(function (client, done) {
+        commonPage.expect.element('@firstBasketItemDescription').text.to.equal(productName);
+        done();
+      })
+  
     // // Go to checkout:
     // pageHelper.clickAndWaitForUrlChange(basketPage.checkOutButton);
     //
@@ -78,15 +81,6 @@ before: function(browser) {
     // };
     //
     // checkOutPage.payWithAdyenAndHandleThankYouPageExpectations(thankyouPageExpectations);
-  },
-
-  // 'Hello world 2 test' : function (browser) {
-  //   browser
-  //     .waitForElementVisible('.search-bar', 1000)
-  //     .setValue('.search-bar .input--text', 'hello world 2!')
-  //     .click('.search-bar .btn--action')
-  //     .pause(1000)
-  //     .assert.containsText('h1', 'Zoekresultaten');
-  // }
+  }
 
 };
