@@ -1,0 +1,24 @@
+{
+  "name": "inno-day",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chromedriver": "^2.16.0",
+    "nightwatch": "^0.7.11",
+    "selenium": "^2.20.0",
+    "selenium-server": "^2.47.1"
+  },
+  "devDependencies": {
+    "chromedriver": "^2.16.0",
+    "intern": "^3.0.0",
+    "nightwatch": "^0.7.11",
+    "protractor": "^2.1.0",
+    "selenium": "^2.20.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
