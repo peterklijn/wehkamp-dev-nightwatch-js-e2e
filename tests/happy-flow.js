@@ -66,11 +66,14 @@ before: function(browser) {
       .perform(function (client, done) {
         commonPage.expect.element('@firstBasketItemDescription').text.to.equal(productName);
         done();
-      })
-  
-    // // Go to checkout:
-    // pageHelper.clickAndWaitForUrlChange(basketPage.checkOutButton);
-    //
+      });
+
+    commonPage
+      .click('@checkOutButton')
+      .enterShipping();
+
+
+
     // // Fill in form and go to payment:
     // checkOutPage.fillShippingInformation();
     // checkOutPage.submitAddressButton.click();
