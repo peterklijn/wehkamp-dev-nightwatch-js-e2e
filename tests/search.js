@@ -35,15 +35,31 @@ module.exports = {
       .url(this.client.launchUrl)
       .pause(2000)
       .useCss();
-
-    this.client.page.search()
-      .searchFor('jumpsuit')
-      .submit();
   },
 
-  'Search page should ...': function (client) {
+  'Search for a broek and expect the title of that product to contain broek' : function (client) {
+    client.page.search()
+      .searchFor('broek')
+      .submit()
+      .assert.containsText('h1', 'Zoekresultaten')
+      .page.productlist_helper()
+      .waitForElementVisible('@firstProduct', 7000)
+      .click('@firstProductTitle')
+      .api.pause(1000)
+      .page.product_helper()
+      .assert.containsText('@title', 'broek');
+  },
+
+  'Search page should contain the search marker in the URL for Divolte': function (client) {
+    client.page.search()
+      .searchFor('jumpsuit')
+      .submit()
+      .assert.urlContains('manual');
+  },
+
+  'Search page should remember the search term': function (client) {
     var searchPage = client.page.search();
-    searchPage.assert.urlContains('manual');
+    searchPage.searchFor('jumpsuit').submit();
     searchPage.expect.element('@searchBar').to.have.attribute('value').equals('jumpsuit');
   }
 };
