@@ -38,17 +38,16 @@ module.exports = {
   },
 
   'Hello world test' : function (client) {
-    client.page.home()
+    client.page.search()
       .searchFor('hello world!')
       .submit()
       .assert.containsText('h1', 'Zoekresultaten');
   },
 
   'Hello world 2 test' : function (client) {
-    client.page.home()
+    client.page.search()
       .searchFor('hello world 2!')
       .submit()
       .assert.containsText('h1', 'Zoekresultaten');
   }
-
 };
