@@ -39,16 +39,11 @@ module.exports = {
     this.client.page.search()
       .searchFor('jumpsuit')
       .submit();
-
   },
 
-  'Search page should contain the search marker in the URL for Divolte': function (client) {
-    client.page.search().assert.urlContains('manual');
-  },
-
-  'Search page should remember the search term': function (client) {
-    client.page.search().expect.element('@searchBar').to.have.attribute('value').equals('jumpsuit');
-  },
-
-
+  'Search page should ...': function (client) {
+    var searchPage = client.page.search();
+    searchPage.assert.urlContains('manual');
+    searchPage.expect.element('@searchBar').to.have.attribute('value').equals('jumpsuit');
+  }
 };
