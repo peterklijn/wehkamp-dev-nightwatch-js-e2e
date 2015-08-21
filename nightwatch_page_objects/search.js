@@ -13,6 +13,7 @@ module.exports = {
   commands: [searchCommands],
   elements: {
     searchBar: { selector: '.search-bar .input--text' },
-    submitButton: { selector: '.search-bar .btn--action'}
+    submitButton: { selector: '.search-bar .btn--action' },
+    searchResultText: { selector: '[ng-bind="total"]' }
   }
 };
