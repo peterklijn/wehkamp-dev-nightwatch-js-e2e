@@ -70,14 +70,14 @@ before: function(browser) {
 
     commonPage
       .click('@checkOutButton')
-      .enterShipping();
+      .enterShipping()
+      .click('@submitAddressButton')
+      .waitForElementPresent('@mrCashRadio', 10000)
+      // .payWithAdyen()
+      // .expect.element('@title').text.to.equal('Hartelijk dank voor je bestelling!')
 
 
 
-    // // Fill in form and go to payment:
-    // checkOutPage.fillShippingInformation();
-    // checkOutPage.submitAddressButton.click();
-    //
     // var thankyouPageExpectations = function() {
     //   expect(element(by.css('h1')).getText()).toContain('Hartelijk dank voor je bestelling!');
     //   expect(thankyouPage.thankYouProductName.getText()).toBe(productName);

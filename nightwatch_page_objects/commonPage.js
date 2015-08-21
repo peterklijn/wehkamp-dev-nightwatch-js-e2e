@@ -1,14 +1,24 @@
 var commands = {
   enterShipping: function () {
-    this.setValue('@firstName', 'Herman');
-    this.setValue('@lastName', 'Zeelsvors');
-    this.setValue('@shipToAddress', 'Meikade');
-    this.setValue('@houseNumber', '12');
-    this.setValue('@shipToPostalCode', '1234');
-    this.setValue('@shipToCity', 'Lokeren');
-    this.setValue('@phoneNumber', '012345678');
-    this.setValue('@emailAddress', 'payment@tester.be');
-    this.click('@ageCheck');
+    return this
+      .setValue('@firstName', 'Herman')
+      .setValue('@lastName', 'Zeelsvors')
+      .setValue('@shipToAddress', 'Meikade')
+      .setValue('@houseNumber', '12')
+      .setValue('@shipToPostalCode', '1234')
+      .setValue('@shipToCity', 'Lokeren')
+      .setValue('@phoneNumber', '012345678')
+      .setValue('@emailAddress', 'payment@tester.be')
+      .click('@ageCheck');
+  },
+  payWithAdyen: function () {
+    return this
+      .click('@mrCashRadio')
+      .click('@submitAddressButton')
+    // this._handleFirstMisterCashPage();
+    // this._handleSecondMisterCashPage();
+    // this._handleMisterCashLoginPage();
+    // this._handleThankyouPageExpectations(functionWithExpectations);
   }
 }
 
@@ -36,6 +46,9 @@ module.exports = {
     shipToCity: '[ng-model="checkoutCtrl.shipTo.shippingAddress.city"]',
     phoneNumber: '[ng-model="checkoutCtrl.shipTo.phoneNumber.number"]',
     emailAddress: '[ng-model="checkoutCtrl.shipTo.email.address"]',
-    ageCheck: '.legal-check > label'
+    ageCheck: '.legal-check > label',
+    submitAddressButton: 'form[name="checkoutCtrl.shipToForm"] div:not(.ng-hide) a.btn--action',
+
+    mrCashRadio: '#bcmc'
   }
 }
