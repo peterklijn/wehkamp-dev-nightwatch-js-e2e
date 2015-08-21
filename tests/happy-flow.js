@@ -40,12 +40,13 @@ before: function(browser) {
   'Happy flow test' : function (browser) {
     // Search for a trui from the homepage:
 
-    var commonPage = browser.page.commonPage();
+    var commonPage = browser.page.common_page();
     var productName;
 
-    commonPage
-      .setValue('@searchBar', 'trui')
-      .click('@searchButtonElement')
+    browser.page.search()
+      .searchFor('trui')
+      .submit()
+      .page.common_page()
       .waitForElementPresent('h1', 10000)
       .expect.element('@title').text.to.equal('Zoekresultaten');
 
@@ -75,15 +76,6 @@ before: function(browser) {
       .waitForElementPresent('@mrCashRadio', 10000)
       .payWithAdyen()
       // .expect.element('@title').text.to.equal('Hartelijk dank voor je bestelling!')
-
-
-
-    // var thankyouPageExpectations = function() {
-    //   expect(element(by.css('h1')).getText()).toContain('Hartelijk dank voor je bestelling!');
-    //   expect(thankyouPage.thankYouProductName.getText()).toBe(productName);
-    // };
-    //
-    // checkOutPage.payWithAdyenAndHandleThankYouPageExpectations(thankyouPageExpectations);
   }
 
 };
