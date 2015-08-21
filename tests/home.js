@@ -1,19 +1,20 @@
+'use strict';
+
 module.exports = {
-  
-before: function(browser) {
+  before: function(browser) {
     console.log("Setting up...");
     browser
       .windowSize('current', 1040, 768)
-      .url(this.client.launchUrl) 
+      .url(this.client.launchUrl)
       .setCookie({
-        name: 'NlUserModalShown', 
-        value: 'true', 
-        path: '/', 
+        name: 'NlUserModalShown',
+        value: 'true',
+        path: '/',
         domain: '.developmentci.rebb.baseless.nl'})
       .setCookie({
-        name: 'cookiebarCookie', 
-        value: 'accept', 
-        path: '/', 
+        name: 'cookiebarCookie',
+        value: 'accept',
+        path: '/',
         domain: '.developmentci.rebb.baseless.nl'})
       .waitForElementVisible("body", 1000)
   },
@@ -36,21 +37,17 @@ before: function(browser) {
       .useCss()
   },
 
-  'Hello world test' : function (browser) {
-    browser
-      .waitForElementVisible('.search-bar', 1000)
-      .setValue('.search-bar .input--text', 'hello world!')
-      .click('.search-bar .btn--action')
-      .pause(1000)
+  'Hello world test' : function (client) {
+    client.page.home()
+      .searchFor('hello world!')
+      .submit()
       .assert.containsText('h1', 'Zoekresultaten');
   },
 
-  'Hello world 2 test' : function (browser) {
-    browser
-      .waitForElementVisible('.search-bar', 1000)
-      .setValue('.search-bar .input--text', 'hello world 2!')
-      .click('.search-bar .btn--action')
-      .pause(1000)
+  'Hello world 2 test' : function (client) {
+    client.page.home()
+      .searchFor('hello world 2!')
+      .submit()
       .assert.containsText('h1', 'Zoekresultaten');
   }
 
