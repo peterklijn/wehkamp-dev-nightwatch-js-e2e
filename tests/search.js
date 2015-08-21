@@ -35,11 +35,6 @@ module.exports = {
       .url(this.client.launchUrl)
       .pause(2000)
       .useCss();
-
-    this.client.page.search()
-      .searchFor('jumpsuit')
-      .submit();
-
   },
 
   'Search for a broek and expect the title of that product to contain broek' : function (client) {
@@ -56,10 +51,18 @@ module.exports = {
   },
 
   'Search page should contain the search marker in the URL for Divolte': function (client) {
+    this.client.page.search()
+      .searchFor('jumpsuit')
+      .submit();
+      
     client.page.search().assert.urlContains('manual');
   },
 
   'Search page should remember the search term': function (client) {
+    this.client.page.search()
+      .searchFor('jumpsuit')
+      .submit();
+
     client.page.search().expect.element('@searchBar').to.have.attribute('value').equals('jumpsuit');
   }
 };
