@@ -3,18 +3,18 @@ module.exports = {
 before: function(browser) {
     console.log("Setting up...");
     browser
-      .windowSize('current', 1024, 768)
+      .windowSize('current', 1040, 768)
       .url(this.client.launchUrl) 
       .setCookie({
         name: 'NlUserModalShown', 
         value: 'true', 
         path: '/', 
-        domain: '.wehkamp.com'})
+        domain: '.developmentci.rebb.baseless.nl'})
       .setCookie({
         name: 'cookiebarCookie', 
         value: 'accept', 
         path: '/', 
-        domain: '.wehkamp.com'})
+        domain: '.developmentci.rebb.baseless.nl'})
       .waitForElementVisible("body", 1000)
   },
 
@@ -30,7 +30,7 @@ before: function(browser) {
         name: 'rebb_shopper',
         value: undefined,
         path: '/',
-        domain: '.wehkamp.com'})
+        domain: '.developmentci.rebb.baseless.nl'})
       .url(this.client.launchUrl)
       .pause(2000)
       .useCss()

@@ -1,6 +1,7 @@
 # Nightwatch
 reports/
 node_modules/
+*.log
 
 # IDEA IntelliJ
 .project
