@@ -14,11 +14,20 @@ var commands = {
   payWithAdyen: function () {
     return this
       .click('@mrCashRadio')
-      .click('@submitAddressButton')
-    // this._handleFirstMisterCashPage();
+      .click('@paymentSubmit')
+      .waitForElementPresent('@mrCashHeader', 10000)
+      .handleFirstMisterCashPage()
     // this._handleSecondMisterCashPage();
     // this._handleMisterCashLoginPage();
     // this._handleThankyouPageExpectations(functionWithExpectations);
+  },
+  handleFirstMisterCashPage:  function () {
+    return this
+      .setValue('@adyenMisterCashCardNumber', '6703 4444 4444 4449')
+      .setValue('@adyenMisterCashHolderName', 'Wehkamp Tester')
+      .setValue('@adyenMisterCashExpiryMonth', '06')
+      .setValue('@adyenMisterCashExpiryYear', '2016')
+      .click('@adyenMisterCashSubmitButton');
   }
 }
 
@@ -49,6 +58,14 @@ module.exports = {
     ageCheck: '.legal-check > label',
     submitAddressButton: 'form[name="checkoutCtrl.shipToForm"] div:not(.ng-hide) a.btn--action',
 
-    mrCashRadio: '#bcmc'
+    mrCashRadio: 'label[for="bcmc"]',
+    paymentSubmit: 'form[name="paymentForm"] a.btn--action',
+
+    mrCashHeader: '#logoheader',
+    adyenMisterCashCardNumber: '[name="bcmc.cardNumber"]',
+    adyenMisterCashHolderName: '[name="bcmc.cardHolderName"]',
+    adyenMisterCashExpiryMonth: '[name="bcmc.expiryMonth"]',
+    adyenMisterCashExpiryYear: '[name="bcmc.expiryYear"]',
+    adyenMisterCashSubmitButton: '#mainSubmit'
   }
 }

@@ -73,7 +73,7 @@ before: function(browser) {
       .enterShipping()
       .click('@submitAddressButton')
       .waitForElementPresent('@mrCashRadio', 10000)
-      // .payWithAdyen()
+      .payWithAdyen()
       // .expect.element('@title').text.to.equal('Hartelijk dank voor je bestelling!')
 
 
