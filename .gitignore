@@ -1,6 +1,7 @@
 # Nightwatch
 reports/
 node_modules/
+screenshots/
 *.log
 selenium-debug.log
 
