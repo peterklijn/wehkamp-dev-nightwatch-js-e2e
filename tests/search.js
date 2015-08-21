@@ -41,6 +41,8 @@ module.exports = {
     client.page.search()
       .searchFor('broek')
       .submit()
+      .assert.urlContains('manual')
+      .assert.attributeEquals('.search-bar .input--text', 'value', 'broek')
       .assert.containsText('h1', 'Zoekresultaten')
       .page.productlist_helper()
       .waitForElementVisible('@firstProduct', 7000)
@@ -49,17 +51,4 @@ module.exports = {
       .page.product_helper()
       .assert.containsText('@title', 'broek');
   },
-
-  'Search page should contain the search marker in the URL for Divolte': function (client) {
-    client.page.search()
-      .searchFor('jumpsuit')
-      .submit()
-      .assert.urlContains('manual');
-  },
-
-  'Search page should remember the search term': function (client) {
-    var searchPage = client.page.search();
-    searchPage.searchFor('jumpsuit').submit();
-    searchPage.expect.element('@searchBar').to.have.attribute('value').equals('jumpsuit');
-  }
 };
