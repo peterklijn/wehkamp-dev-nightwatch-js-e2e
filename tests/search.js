@@ -37,17 +37,23 @@ module.exports = {
       .useCss()
   },
 
-  'Hello world test' : function (client) {
+  'Search for a broek and expect the title of that product to contain broek' : function (client) {
     client.page.search()
-      .searchFor('hello world!')
+      .searchFor('broek')
       .submit()
-      .assert.containsText('h1', 'Zoekresultaten');
+      .assert.containsText('h1', 'Zoekresultaten')
+      .page.productlist_helper()
+      .waitForElementVisible('@firstProduct', 7000)
+      .click('@firstProductTitle')
+      .api.pause(1000)
+      .page.product_helper()
+      .assert.containsText('@title', 'broek');
   },
 
-  'Hello world 2 test' : function (client) {
-    client.page.search()
-      .searchFor('hello world 2!')
-      .submit()
-      .assert.containsText('h1', 'Zoekresultaten');
-  }
+  // 'Hello world 2 test' : function (client) {
+  //   client.page.search()
+  //     .searchFor('hello world 2!')
+  //     .submit()
+  //     .assert.containsText('h1', 'Zoekresultaten');
+  // }
 };
